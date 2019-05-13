@@ -1,0 +1,30 @@
+#set("content") {
+    <h2>Projekt</h2>
+    #if(projects) {
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr> <th>
+                Namn
+            </th> <th>
+                Förening
+            </th> </tr>
+        </thead>
+        <tbody>
+            #for(project in projects) {
+                <tr>
+                    <td>
+                        <a href="/project/#(project.id)">#(project.name)</a>
+                    </td>
+                    <td>
+                        #(project.association)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    } else {
+        <h2>There aren't any projects yet!</h2>
+    }
+}
+
+#embed("base")

@@ -1,0 +1,6 @@
+#set("content") {
+    <h2>#(project.name)</h2>
+    
+}
+
+#embed("base")
