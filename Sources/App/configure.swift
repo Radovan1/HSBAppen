@@ -12,6 +12,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     let router = EngineRouter.default()
     try routes(router)
     services.register(router, as: Router.self)
+    
+    let logger = PrintLogger()
+    services.register(logger)
 
     // Register middleware
     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
